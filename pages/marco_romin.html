@@ -1,47 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marco Romin</title>
-</head>
-<body>
-    <header>
-        <section>
-        <h1>Marco Romin</h1>
-        <img class="portrait" src="/images/marco_romin.jpg" alt="Marco Romin">
-        <section>
-            <section>
-                <h2>Saker jag är bra på:</h2>
-                 <ul>
-                     <li>Javascript</li>
-                    <li>Design</li>
-                    <li>Problemlösning</li>
-                    <li>Datorspel</li>
-                </ul>
-            </section>
-            <section>
-                <h2>Länkar</h2>
-                <ul>
-                    <li><a href="https://github.com/yaarco" target="_blank">
-                        Github
-                        <svg class="github_logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 30 30">
-                        <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
-                        </svg>
-                    </a></li>
-                    <li><a href="/index.html">Tillbaka</a></li>
-                </ul>
-            </section>
-        </section>
-    </section>
-
-    </header>
-</body>
-<style>
+    <style>
     body {
-        background-color: #0a0c14;
+        background: radial-gradient(ellipse at center, #19203c 0%, #20152c 100%);      
         color: #ffffff;
         font-family: monospace;
+        min-height: 100vh;
+         margin: 0;
     }
     a{
         color: #ffffff;
@@ -50,30 +19,134 @@
     }
     li {
         margin-bottom: 10px;
+        width:fit-content;
+        font-size: 1.2em;
     }
 
-    .li > * {
+
+    main {
+        display: flex; /*Använder flexbox för att få elementen att ligga jämte varann och positionering*/
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*Lite responsivitet fixar typ*/
+    @media screen and (max-width: 600px) {
+    main {
+        flex-direction: column;
+    }
+    
+    section {
+        margin-left: 0; 
+    }
+}
+    
+    /*Byt färg med animation på länkarna när musen är över*/
+    li a:hover {
+        color: #ff0000;
+        transition: all 0.3s ease;
+    }
+    li a:hover svg {
+        fill: #ff0000;
+        transition: all 0.3s ease;
+    }
+    li a svg {
         vertical-align: middle;
+        margin-bottom: 5px;
+    }
+    ul{
+        width: fit-content;
+    }
+    section {
+        margin-left: 50px;
+    }
+    .skills > li {
+        margin-right: 30px;
     }
     .portrait {
         width: 250px;
         height: auto;
         border-radius: 20px;
         border: 2px solid #ffffff;
+        display: inline-block;
     }
     h1 {
         font-size: 3.5em;
         margin-bottom: 10px;
+        
     }
+    
     header {
         text-align: center;
         padding: 20px;
     }
-    .github_logo {
+    .links {
+        list-style-type: none;
+        padding: 0;
+        margin-left: 30px;
+    }
+    .links li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    svg {
         width: 30px;
         height: 30px;
         fill: #ffffff;
-        transition: fill 0.3s ease;
     }
+    .info {
+        vertical-align: center;
+        margin-left: 20px;
+    }
+
+
+    
 </style>
+</head>
+<body>
+    <header>
+        <h1>Marco Romin</h1>
+    </header>
+    <main>
+                <img class="portrait" src="/images/marco_romin.jpg" alt="Marco Romin">
+                <div class="info">
+                    <section>
+                        <h2>Saker jag är bra på:</h2>
+                        <ul class="skills">
+                            <li>Javascript</li>
+                            <li>Design</li>
+                            <li>Problemlösning</li>
+                            <li>Datorspel</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Länkar:</h2>
+                        <ul class ="links">
+                            <li>
+                                <a href="https://github.com/yaarco" target="_blank" rel="noopener noreferrer">
+                                    <!-- Github ikon svg -->
+                                <svg class="github_logo" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30">
+                                <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+                                </svg>
+                                Github
+                                </a>
+                            </li>
+                            <li><a href="/index.html">
+                                <!-- Tillbaka ikon -->
+                                <svg fill="#000000"  viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <title>return</title>
+                                <path d="M0 21.984q0.032-0.8 0.608-1.376l4-4q0.448-0.48 1.056-0.576t1.12 0.128 0.864 0.736 0.352 1.12v1.984h18.016q0.8 0 1.408-0.576t0.576-1.408v-8q0-0.832-0.576-1.408t-1.408-0.608h-16q-0.736 0-1.248-0.416t-0.64-0.992 0-1.152 0.64-1.024 1.248-0.416h16q2.464 0 4.224 1.76t1.76 4.256v8q0 2.496-1.76 4.224t-4.224 1.76h-18.016v2.016q0 0.64-0.352 1.152t-0.896 0.704-1.12 0.096-1.024-0.544l-4-4q-0.64-0.608-0.608-1.44z"></path>
+                                </svg>
+                                Tillbaka
+                            </a></li>
+                        </ul>
+                    </section>
+                </div>
+    </main>
+     
+
+
+</body>
+
+
 </html>
