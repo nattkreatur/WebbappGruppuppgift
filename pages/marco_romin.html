@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Romin</title>
+    <style>
+    body {
+        background: radial-gradient(ellipse at center, #19203c 0%, #20152c 100%);      
+        color: #ffffff;
+        font-family: monospace;
+        min-height: 100vh;
+         margin: 0;
+    }
+    a{
+        color: #ffffff;
+        font-weight: bold;
+    }
+    li {
+        margin-bottom: 10px;
+        width:fit-content;
+        font-size: 1.2em;
+    }
+
+
+    main {
+        display: flex; /*Använder flexbox för att få elementen att ligga jämte varann och positionering*/
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*Lite responsivitet fixar typ*/
+    @media screen and (max-width: 600px) {
+    main {
+        flex-direction: column;
+    }
+    
+    section {
+        margin-left: 0; 
+    }
+}
+    
+    /*Byt färg med animation på länkarna när musen är över*/
+    li a:hover {
+        color: #ff0000;
+        transition: all 0.3s ease;
+    }
+  
+    ul{
+        width: fit-content;
+    }
+    section {
+        margin-left: 50px;
+    }
+    .skills > li {
+        list-style-type:square;
+    }
+    .portrait {
+        width: 250px;
+        height: auto;
+        border-radius: 20px;
+        border: 2px solid #ffffff;
+        display: inline-block;
+    }
+    h1 {
+        font-size: 3.5em;
+        margin-bottom: 10px;
+        
+    }
+    
+    header {
+        text-align: center;
+        padding: 20px;
+    }
+    .links {
+        list-style-type: none;
+        padding: 0;
+        margin-left: 30px;
+    }
+    .links li {
+        display: inline-block;
+        margin-right: 20px;
+
+    }
+    
+    .info {
+        vertical-align: center;
+        margin-left: 20px;
+    }
+    
+</style>
+</head>
+<body>
+    <header>
+        <h1>Marco Romin</h1>
+    </header>
+    <main>
+                <img class="portrait" src="/images/marco_romin.jpg" alt="Marco Romin">
+                <div class="info">
+                    <section>
+                        <h2>Saker jag är bra på:</h2>
+                        <ul class="skills">
+                            <li>Javascript</li>
+                            <li>Design</li>
+                            <li>Problemlösning</li>
+                            <li>Datorspel</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Länkar:</h2>
+                        <ul class ="links">
+                            <li>
+                                <a href="https://github.com/yaarco" target="_blank" rel="noopener noreferrer">
+                                    Github
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/index.html">
+                                    Startsida
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+    </main>
+    
+</body>
+</html>
